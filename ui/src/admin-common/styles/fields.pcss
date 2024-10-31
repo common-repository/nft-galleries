@@ -1,0 +1,109 @@
+:global .wp-core-ui :global .wp-core-ui-override,
+:global .wp-core-ui.wp-core-ui-override {
+  & pre {
+    display: block;
+  }
+
+  & code {
+    display: inline-block;
+  }
+
+  & select,
+  & input:not([type]),
+  & input[type="text"],
+  & input[type="search"],
+  & input[type="email"],
+  & input[type="password"],
+  & input[type="number"],
+  & input[type="date"],
+  & input[type="time"] {
+    padding: 0 10px;
+    color: #000;
+    border: 1px solid var(--snft-line-color);
+    border-radius: 3px;
+    background: #fff;
+    min-height: 40px;
+    font-size: 13px;
+
+    &:focus {
+      border-color: var(--wp-admin-theme-color);
+      background-color: #fff;
+      box-shadow: 0 0 0 1px var(--wp-admin-theme-color);
+    }
+
+    &::placeholder {
+      color: #72777c;
+      opacity: 1;
+    }
+  }
+
+  & input[type="radio"],
+  & input[type="checkbox"] {
+    margin: 0 8px 0 0;
+  }
+
+  & select {
+    display: inline-block;
+    height: 26px;
+    box-sizing: content-box;
+  }
+
+  & :global .dashicons {
+    transition: none;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  & a:not(.button) {
+    color: var(--wp-admin-theme-color);
+
+    &:hover, &:active {
+      color: var(--wp-admin-theme-color-darker-10);
+    }
+
+    &:focus {
+      color: var(--wp-admin-theme-color-darker-20);
+    }
+  }
+
+  & hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #fafafa;
+  }
+
+  & p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  & ul, & ol {
+    margin-bottom: 13px;
+  }
+
+  & ol {
+    list-style-type: decimal;
+    margin-left: 2em;
+
+    & li {
+      list-style-type: decimal;
+    }
+  }
+
+  & li, & dd {
+    margin-bottom: 6px;
+  }
+
+
+  & :global .react-select input[type="text"] {
+    min-height: unset !important;
+  }
+
+  & :global .react-select input[type="text"] {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: 0 0 0 transparent !important;
+  }
+}

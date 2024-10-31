@@ -1,0 +1,15 @@
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.disabled {
+    composes: radio-group;
+    composes: disabled from "../../../styles/theme.pcss";
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}

@@ -1,0 +1,82 @@
+:root {
+  --snft-news-beacon-size: 56px;
+  --snft-news-beacon-icon-size: 26px;
+  --snft-news-beacon-offset: 25px;
+}
+
+.beacon {
+  position: fixed;
+  bottom: var(--snft-news-beacon-offset);
+  right: var(--snft-news-beacon-offset);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  z-index: 9999;
+}
+
+.button {
+  all: unset;
+  position: relative;
+  width: var(--snft-news-beacon-size);
+  height: var(--snft-news-beacon-size);
+  color: #fff;
+  text-align: center;
+  background: var(--snft-rouge);
+  background: linear-gradient(135deg, var(--snft-rouge) 35%, rgb(224, 42, 77) 75%);
+  box-shadow: 1px 2px 4px 0 rgba(21, 26, 43, 0.45);
+  border-radius: 99999px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transform: scale(0);
+  transform-origin: center center;
+  animation-name: button-animation;
+  animation-duration: 0.11s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+
+  & :global .dashicons {
+    width: var(--snft-news-beacon-icon-size);
+    height: var(--snft-news-beacon-icon-size);
+    font-size: var(--snft-news-beacon-icon-size);
+    line-height: var(--snft-news-beacon-icon-size);
+    margin: 0 !important;
+  }
+}
+
+.counter {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  font-size: 13px;
+  color: #fff;
+  background: #000;
+  border-radius: 9999px;
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.hide-link {
+  position: absolute;
+  top: 6px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.menu {
+  width: 400px;
+}
+
+@keyframes button-animation {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

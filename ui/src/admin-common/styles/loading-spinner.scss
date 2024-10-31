@@ -1,0 +1,15 @@
+.loading-spinner {
+  display: inline-block;
+  border-radius: 9999px;
+  animation: 1s preview-spinner-animation infinite linear;
+}
+
+@keyframes preview-spinner-animation {
+  from {
+    transform: rotateZ(0);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}

@@ -1,0 +1,33 @@
+@use "theme";
+
+// Styles to make admin pages look like standard WP Admin pages
+.std-admin-page {
+  padding: 20px 22px;
+}
+
+#snft-admin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: theme.$z-medium - 1;
+
+  display: flex;
+  flex-direction: column;
+
+  color: theme.$text-color;
+  background-color: theme.$wp-color;
+
+  small {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #wpbody {
+    top: 46px !important;
+    padding-top: 0 !important;
+  }
+}

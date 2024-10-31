@@ -1,0 +1,25 @@
+@use "theme";
+
+.wp-notices {
+  &__menu {
+    max-width: 500px;
+    min-width: 300px;
+    background: theme.$wp-color;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 5px 10px;
+
+    .notice {
+      margin: 0;
+
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

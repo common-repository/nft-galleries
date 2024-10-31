@@ -1,0 +1,52 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tooltip {
+  composes: z-high from "../../../common/styles/layout.pcss";
+}
+
+.tooltip-container {
+  text-align: left;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.tooltip-content {
+  & p {
+    margin: 0 0 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & img {
+    max-width: 100%;
+    margin: 5px 0;
+    border-radius: 2px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.icon {
+  height: 18px;
+  line-height: 18px;
+
+  & :global .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: bottom;
+  }
+}

@@ -1,0 +1,35 @@
+.root {
+}
+
+.field-container {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 5px;
+
+  & :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.field-element {
+  min-height: 38px;
+  box-sizing: border-box;
+}
+
+.field-label {
+  flex: 0 1 200px;
+  composes: field-element;
+  padding: 10px 0;
+}
+
+.field-control {
+  composes: field-element;
+  composes: flex-column from '../../../common/styles/layout.pcss';
+  justify-content: stretch;
+  align-items: flex-start;
+}
+
+.field-centered .field-control {
+  justify-content: center;
+}

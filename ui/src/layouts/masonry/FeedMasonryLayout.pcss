@@ -1,0 +1,44 @@
+.root {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.masonry {
+  display: grid;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.column {
+  flex: 1;
+  composes: flex-column from "../../common/styles/layout.pcss";
+  justify-content: flex-start;
+  align-items: stretch;
+
+  &:last-of-type {
+    margin-right: 0 !important;
+  }
+}
+
+.cell {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow: hidden;
+
+  &:last-of-type {
+    margin-bottom: 0 !important;
+  }
+}
+
+.token {
+  flex: 1;
+  overflow: hidden;
+}
+
+.button-list {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  justify-content: flex-start;
+  align-items: center;
+}

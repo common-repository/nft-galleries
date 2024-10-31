@@ -1,0 +1,50 @@
+.root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  padding: 15px;
+  color: #555;
+  border: 5px dashed #aaa;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+}
+
+.root:hover,
+.root:focus,
+.hoverStyle {
+  color: #fff;
+  border-color: transparent;
+  background: var(--snft-primary-color);
+}
+
+.focused {
+  composes: root;
+  composes: hoverStyle;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & :global(.dashicons) {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 10px;
+  }
+}
+
+.text {
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 5px;
+}

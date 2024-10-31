@@ -1,0 +1,177 @@
+@use "theme";
+
+.spoiler {
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 0;
+    background: #fff;
+    cursor: pointer;
+
+    &, &:hover, &:active {
+      box-shadow: 0 0 0 transparent;
+    }
+
+    &, &:focus, &:active {
+      border-color: theme.$line-color;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__header:focus &__label span:not(.dashicons) {
+    text-decoration: underline;
+  }
+
+  &__label {
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    color: theme.$text-color;
+    font-weight: bold;
+    user-select: none;
+
+    .dashicons {
+      @include theme.dashicon-size(14px);
+
+      text-decoration: none;
+      margin: 5px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 15px;
+    background: theme.$light-color;
+    border: 1px solid theme.$line-color;
+    border-top: 0;
+
+    p {
+      margin: 0 0 10px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // We specifically target P tags in content in spoilers, to try and make the selector as specific as possible
+  // Otherwise other styles from parent components may unintentionally override this
+  & &__content > p {
+    margin: 0 0 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:not(&--open) &__content {
+    display: none;
+  }
+
+  // Stealth styles
+  & {
+    &--stealth &__header,
+    &--stealth &__content {
+      border: 0;
+    }
+
+    &--stealth &__header {
+      opacity: 0.8;
+      padding: 2px 0;
+      font-weight: normal;
+      justify-content: flex-start;
+      align-self: flex-start;
+      background: transparent;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &:focus {
+        outline: 1px dotted #333;
+      }
+    }
+
+    &--stealth &__label {
+      flex-grow: 0;
+      font-weight: normal;
+    }
+
+    &--stealth &__icon {
+      @include theme.dashicon-size(18px);
+
+      margin-left: 8px;
+    }
+
+    &--stealth &__content {
+      margin-top: 8px;
+      border-radius: 3px;
+      background: #fff;
+      border: 1px solid var(--snft-line-color);
+    }
+
+    &--stealth.spoiler--open &__header &__label > span:not(.dashicons) {
+      text-decoration: underline;
+    }
+  }
+
+  & {
+    &--disabled &__header,
+    &--disabled &__content {
+      @include theme.disabled-style;
+    }
+
+    // Remove top border when proceeding another spoiler
+    + .spoiler .spoiler__header {
+      border-top: 0;
+    }
+
+    + .spoiler .spoiler__content {
+      border-top: 0;
+    }
+  }
+
+  &--fitted,
+  &--fitted &__header,
+  &--fitted &__content {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  &--static &__header {
+    cursor: default;
+  }
+}

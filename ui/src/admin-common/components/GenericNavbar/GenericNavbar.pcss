@@ -1,0 +1,110 @@
+.root {
+  flex: 1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+
+  font-size: 14px;
+  margin: 0;
+  padding: 0 var(--snft-navbar-spacing);
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 1px 1px var(--snft-line-color);
+  box-sizing: border-box;
+}
+
+/*
+ * List containers
+ * ------------------
+ */
+
+.list {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+}
+
+.left-list {
+  composes: list;
+
+  & .item {
+    margin-right: var(--snft-navbar-spacing);
+  }
+}
+
+.center-list {
+  composes: list;
+  position: absolute;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  pointer-events: none;
+
+  & .item {
+    pointer-events: all;
+    margin-left: calc(var(--snft-navbar-spacing) / 2);
+    margin-right: calc(var(--snft-navbar-spacing) / 2);
+  }
+}
+
+.right-list {
+  composes: list;
+
+  & .item {
+    margin-left: var(--snft-navbar-spacing);
+  }
+}
+
+.path-list {
+  composes: left-list;
+}
+
+/*
+ * List items
+ * ------------------
+ */
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  position: relative;
+  max-height: 100%;
+  font-size: inherit;
+  white-space: nowrap;
+
+  & > button {
+    height: 100%;
+    margin: 5px 0 !important;
+  }
+}
+
+.path-segment {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.separator {
+  composes: item;
+
+  flex-shrink: 0;
+  width: 10px;
+  height: 42%;
+  color: var(--snft-line-color);
+
+  & svg {
+    stroke-width: 8;
+  }
+}

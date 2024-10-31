@@ -1,0 +1,43 @@
+.root {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  align-items: stretch;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: dense;
+}
+
+.cell {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.highlight {
+  composes: cell;
+
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.cell-content {
+  position: absolute;
+  composes: fill-parent flex-column from "../../common/styles/layout.pcss";
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.token-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.media-meta {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  align-items: stretch;
+}
+
+.button-list {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  align-items: center;
+}

@@ -1,0 +1,32 @@
+.root {
+  display: inline-block;
+  padding: 0 22px;
+  margin: 8px 0;
+
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 36px;
+
+  background: var(--snft-black);
+  border-radius: 3px;
+
+  &, &:hover, &:active, &:focus, &:visited {
+    color: var(--snft-pro-fg-color) !important;
+  }
+
+  &:hover, &:active {
+    text-decoration: none;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .1) inset;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $color;
+  }
+}
+
+.red {
+  composes: root;
+  background: var(--snft-pro-bg-color);
+}

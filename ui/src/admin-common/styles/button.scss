@@ -1,0 +1,265 @@
+@use "theme";
+
+.wp-core-ui .wp-core-ui-override,
+.wp-core-ui.wp-core-ui-override {
+  button {
+    cursor: pointer;
+    line-height: 16px;
+
+    .dashicons:not(:only-child) {
+      margin-right: 5px;
+    }
+
+    @media screen and (max-width: 782px) {
+      & {
+        padding: 0 8px;
+      }
+    }
+  }
+}
+
+.wp-core-ui .wp-core-ui-override .button,
+.wp-core-ui.wp-core-ui-override .button {
+  position: relative;
+
+  &-primary {
+    &:disabled:focus, &[disabled]:focus {
+      outline: 1px dotted black !important;
+    }
+  }
+
+  &-large {
+    padding: 3px 20px;
+  }
+
+  &-tertiary {
+    border: 0;
+    background: transparent;
+
+    &:disabled, &[disabled] {
+      background: transparent;
+      text-decoration: none !important;
+    }
+
+    &:hover {
+      text-decoration: underline;
+
+      .dashicons {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-danger {
+    color: mix(theme.$text-color, theme.$rouge, 10%);
+    border-color: theme.$rouge;
+    background: mix(theme.$rouge, #fff, 5%);
+
+    &:focus, &:hover {
+      color: theme.$rouge;
+    }
+
+    &:active {
+      color: mix(theme.$rouge, #000, 80%);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 1px mix(theme.$rouge, #000, 80%);
+      outline: 2px solid transparent;
+      outline-offset: 0;
+    }
+
+    &:disabled, &[disabled] {
+      color: mix(theme.$rouge, #999, 20%) !important;
+      background: mix(theme.$rouge, #eee, 5%) !important;
+    }
+  }
+
+  &-pill {
+    &:hover {
+      background: mix(theme.$wp-blue, #fff, 10%);
+    }
+
+    &:active {
+      background: mix(theme.$wp-blue, #eee, 10%);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 1px mix(theme.$wp-blue, #000, 80%);
+      outline: 2px solid transparent;
+      outline-offset: 0;
+    }
+
+    &:disabled, &[disabled] {
+      background: transparent !important;
+    }
+  }
+
+  &-tertiary.button-danger {
+    &, &:disabled, &[disabled] {
+      background: transparent !important;
+    }
+  }
+
+  &-tertiary.button-danger-pill {
+    background: transparent;
+
+    $hover-color: mix(theme.$rouge, #fff, 10%);
+
+    &:hover {
+      text-decoration: none;
+      background: $hover-color !important;
+    }
+
+    &:focus, &:hover {
+      background: mix(theme.$rouge, #fff, 10%);
+    }
+
+    &:active {
+      background: mix($hover-color, #000, 95%);
+    }
+
+    &:disabled, &[disabled] {
+      background: transparent !important;
+    }
+  }
+
+  &-active {
+    color: #fff;
+    background: #6c7c88;
+  }
+
+  &[data-num]:not([data-num=""]):not([data-num="0"]) {
+    $pill-size: 15px;
+
+    position: relative;
+
+    &::after {
+      content: attr(data-num);
+      position: absolute;
+      top: 0;
+      left: calc(100% - #{$pill-size});
+      min-width: $pill-size;
+      height: $pill-size;
+      line-height: $pill-size;
+      font-size: 12px;
+      text-align: center;
+      padding: 2px;
+      border-radius: $pill-size;
+      overflow: hidden;
+
+      color: #333;
+      background-color: theme.$yellow;
+    }
+  }
+
+  @include theme.responsive(theme.$screen-tiny) {
+    & {
+      margin-bottom: unset;
+    }
+  }
+}
+
+.button-group {
+  $border-radius: 4px;
+
+  display: inline-flex !important;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-radius: $border-radius;
+
+  > button {
+    border-color: #465a68 !important;
+
+    &.button-active {
+      &, &:hover, &:focus, &:active {
+        color: #fff;
+      }
+    }
+
+    &:not(.button-active) {
+      &, &:hover, &:focus, &:active {
+        color: #50575e;
+      }
+    }
+
+    &:first-of-type {
+      border-right: 0;
+      border-radius: $border-radius 0 0 $border-radius !important;
+    }
+
+    &:last-of-type {
+      border-left: 0;
+      border-radius: 0 $border-radius $border-radius 0 !important;
+    }
+
+    &:not(:last-of-type):not(:first-of-type) {
+      margin-left: 0;
+      margin-right: 0;
+      border-radius: 0;
+    }
+
+    &:hover, &:focus {
+      background: theme.$light-color;
+    }
+
+    &:focus {
+      box-shadow: 0 0 100px theme.$primary-color inset, 0 0 0 2px theme.$btn-focus-outline-color;
+    }
+
+    &--selected {
+      z-index: 1;
+    }
+  }
+}
+
+.button-group-wide {
+  flex: 1;
+  width: 100%;
+
+  > button {
+    flex: 1;
+  }
+}
+
+// DASHICONS IN BUTTONS
+//------------------------------------------
+.wp-core-ui.wp-core-ui-override .button .dashicons,
+.wp-core-ui .wp-core-ui-override .button .dashicons {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: text-bottom;
+}
+
+.wp-core-ui.wp-core-ui-override .button.button-large .dashicons,
+.wp-core-ui .wp-core-ui-override .button.button-large .dashicons {
+  line-height: 22px;
+}
+
+.wp-core-ui.wp-core-ui-override .button .dashicons:not(:last-child),
+.wp-core-ui .wp-core-ui-override .button .dashicons:not(:last-child) {
+  margin-right: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .wp-core-ui.wp-core-ui-override .button .dashicons,
+  .wp-core-ui .wp-core-ui-override .button .dashicons {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+  }
+}
+
+// DASHICONS IN SMALL BUTTONS
+//------------------------------------------
+.wp-core-ui.wp-core-ui-override .button-small .dashicons,
+.wp-core-ui .wp-core-ui-override .button-small .dashicons {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  vertical-align: text-bottom;
+}

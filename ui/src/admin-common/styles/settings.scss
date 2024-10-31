@@ -1,0 +1,57 @@
+@use "spotlight/admin-common/styles/theme";
+
+.settings {
+  &__open-btn {
+    @include theme.button;
+
+    background: 0;
+    border-color: transparent;
+
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 6px;
+
+    &:hover {
+      border-color: theme.$btn-border-color;
+    }
+
+    svg {
+      transform: rotate(90deg)
+    }
+  }
+
+  &__modal {
+    &-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      :not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__group {
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 30px;
+      margin: 0;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+
+    &-label {
+      line-height: 30px;
+    }
+  }
+}

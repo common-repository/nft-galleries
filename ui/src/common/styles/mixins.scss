@@ -1,0 +1,55 @@
+// Z-index offsets
+$z-low: 0;
+$z-medium: 100;
+$z-high: 1000;
+$z-higher: 100000;
+$z-highest: 1000000;
+
+@mixin absolute-fill {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Screen sizes
+$screen-wide: "";
+$screen-large: 1920px;
+$screen-medium: 1400px;
+$screen-small: 1024px;
+$screen-tiny: 768px;
+$screen-thin: 450px;
+
+// Creates a media query for the present screen sizes
+@mixin responsive($size: $screen-wide) {
+  @if $size == $screen-wide {
+    @content;
+  } @else {
+    @media screen and (max-width: $size) {
+      @content;
+    }
+  }
+}
+
+@mixin disabled-style {
+  opacity: 0.45;
+  filter: grayscale(60%);
+  pointer-events: none;
+  cursor: not-allowed !important;
+}
+
+@mixin dashicon($icon) {
+  content: $icon;
+  font-family: "dashicons", monospace;
+  font-style: normal;
+  line-height: inherit;
+  height: 100%;
+}
+
+@mixin dashicon-size($size) {
+  font-size: $size;
+  width: $size;
+  height: $size;
+  line-height: $size;
+}

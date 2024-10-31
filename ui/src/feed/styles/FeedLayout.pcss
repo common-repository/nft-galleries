@@ -1,0 +1,39 @@
+.root {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  image-rendering: high-quality;
+}
+
+.button {
+  display: block;
+  text-align: center;
+}
+
+.load-more-btn {
+  composes: button;
+}
+
+.fake-tokens {
+  padding-bottom: 100%;
+  border-radius: 2px;
+  background-color: var(--snft-grey);
+  animation-duration: 0.75s;
+  animation-name: fake-media-flash-animation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes fake-media-flash-animation {
+  0%, 100% {
+    background: #e3e3e3
+  }
+  50% {
+    background: #efefef;
+  }
+}

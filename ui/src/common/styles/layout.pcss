@@ -1,0 +1,88 @@
+.fill-parent {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.flex-box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* == OVERFLOW == */
+
+.no-overflow {
+  overflow: hidden;
+}
+
+.scroll-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.scroll-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.overflow-x {
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+
+.overflow-y {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* == FLEX BOX == */
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+/* == Z-INDICES == */
+
+.z-medium {
+  z-index: 100;
+}
+
+.z-lower {
+  z-index: -100;
+}
+
+.z-low {
+  z-index: 0;
+}
+
+.z-high {
+  z-index: 1000;
+}
+
+.z-higher {
+  z-index: 100000;
+}
+
+.z-highest {
+  z-index: 1000000;
+}

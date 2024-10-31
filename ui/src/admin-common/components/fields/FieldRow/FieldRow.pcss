@@ -1,0 +1,142 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: stretch;
+
+    &:not(:first-child) {
+        margin-top: 5px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+
+.container-wide {
+    composes: container;
+    flex-direction: column;
+
+    & .content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin-left: -1px;
+    }
+
+    &:first-of-type {
+        & .label {
+            padding-top: 0;
+        }
+    }
+}
+
+.disabled {
+    composes: container;
+
+    & > *:not(.pro-pill) {
+        opacity: 0.45;
+        filter: grayscale(60%);
+        pointer-events: none;
+        cursor: not-allowed !important;
+    }
+}
+
+.disabled-wide {
+    composes: container-wide disabled;
+}
+
+.container + hr {
+    margin-top: 10px !important;
+}
+
+.label {
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 10px 0;
+    box-sizing: border-box;
+
+    & label {
+        display: inline-block;
+        line-height: 18px;
+
+        &:not(:only-child) {
+            margin-right: 3px;
+        }
+    }
+}
+
+
+.label-normal {
+    composes: label;
+    align-items: baseline;
+}
+
+.label-centered {
+    composes: label;
+    align-items: center;
+}
+
+.content {
+    flex: 7;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+
+    & > input[type="text"], & > textarea {
+        width: 100%;
+        max-width: 100% !important;
+    }
+}
+
+.field-normal {
+    composes: field;
+    justify-content: flex-start;
+}
+
+.field-centered {
+    composes: field;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.container:not(.container-wide) .label + .content .field:not(.field-centered) {
+    width: calc(100% - 46px);
+}
+
+.responsive-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.responsive-field {
+    composes: field;
+    flex: unset;
+}
+
+.label-aligner {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.pro-pill {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}

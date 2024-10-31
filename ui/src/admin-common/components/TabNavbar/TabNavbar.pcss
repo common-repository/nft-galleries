@@ -1,0 +1,36 @@
+.label {
+  color: #000;
+  user-select: none;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 5px;
+  border-bottom: 2px solid transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:focus {
+    outline: 1px dotted black;
+    border-width: 0 0 2px;
+    box-shadow: 0 0 0;
+  }
+}
+
+.current {
+  composes: tab;
+  border-color: var(--wp-admin-theme-color);
+
+  & .label {
+    font-weight: bold;
+  }
+}
+
+.disabled {
+  composes: tab;
+  opacity: 0.6;
+  pointer-events: none;
+}

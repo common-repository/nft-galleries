@@ -1,0 +1,73 @@
+.root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.wallet {
+  composes: toggle-button from '../../../../../admin-common/styles/button.pcss';
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 15px;
+  margin: 0;
+}
+
+.wallet-selected {
+  composes: wallet;
+  composes: toggle-button-on from '../../../../../admin-common/styles/button.pcss';
+}
+
+.wallet-disabled {
+    composes: wallet;
+    composes: disabled from '../../../../../admin-common/styles/theme.pcss';
+}
+
+.wallet-selected-disabled {
+    composes: wallet-selected;
+    composes: disabled from '../../../../../admin-common/styles/theme.pcss';
+}
+
+.info-text {
+  text-align: left;
+}
+
+.name {
+  composes: info-text;
+  font-weight: bold;
+  font-size: 14px;
+  color: inherit;
+}
+
+.address {
+  composes: info-text;
+  text-transform: lowercase;
+  font-size: 10px;
+  font-weight: bold;
+  color: inherit;
+  opacity: 0.6;
+}
+
+.tick-icon {
+  flex: 0;
+  position: absolute;
+  top: calc(50% - 15px);
+  right: 20px;
+  font-size: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff
+}

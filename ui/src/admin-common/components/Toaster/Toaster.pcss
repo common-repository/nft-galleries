@@ -1,0 +1,25 @@
+.root {
+  composes: z-highest from '../../../common/styles/layout.pcss';
+
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  right: 8px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  pointer-events: none;
+}
+
+.container {
+  width: 300px;
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+
+  overflow-y: visible;
+  pointer-events: all;
+}

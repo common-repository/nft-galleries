@@ -1,0 +1,57 @@
+@value flex-box from "../../common/styles/layout.pcss";
+
+.image {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  /* Style resets */
+  min-width: unset;
+  max-width: unset;
+  min-height: unset;
+  max-height: unset;
+  object-fit: contain;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 solid transparent !important;
+  outline: 0 solid transparent !important;
+  box-shadow: 0 0 0 transparent !important;
+  box-sizing: content-box !important;
+}
+
+.loading {
+  composes: image;
+  display: block;
+  min-width: 250px;
+  min-height: 300px;
+  animation-name: loading;
+  animation-iteration-count: infinite;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+}
+
+.error {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  min-height: 250px;
+  background: #000;
+}
+
+.error-message {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+@keyframes loading {
+  0%, 100% {
+    background: #eee;
+  }
+
+  50% {
+    background: #fff;
+  }
+}

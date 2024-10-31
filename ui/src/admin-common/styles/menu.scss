@@ -1,0 +1,111 @@
+@use "spotlight/admin-common/styles/theme";
+
+$v-spacing: 6px;
+$h-spacing: 28px;
+$offset: 10px;
+
+.menu {
+  padding: 0;
+  margin: 0;
+  z-index: theme.$z-high;
+
+  &__ref {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+  }
+
+  &__container {
+    position: relative;
+    line-height: 28px;
+    padding: $v-spacing 0;
+    background: #fff;
+    box-shadow: 0 1px 7px theme.$shadow-color;
+    border-radius: 4px;
+
+    max-height: 80%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &[data-placement*='bottom'] &__container {
+    top: $offset;
+  }
+  &[data-placement*='top'] &__container {
+    bottom: $offset;
+  }
+  &[data-placement*='left'] &__container {
+    right: $offset;
+  }
+  &[data-placement*='right'] &__container {
+    left: $offset;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: block;
+
+    button {
+      @include theme.button;
+
+      width: 100%;
+      border: 0;
+      line-height: 22px !important;
+      padding: 7px $h-spacing !important;
+      border-radius: 0;
+      background: transparent;
+      text-align: left;
+
+      .dashicons {
+        font-size: 18px;
+        height: 18px;
+        width: 18px;
+        line-height: 18px;
+        vertical-align: text-bottom;
+        margin-right: 10px;
+      }
+    }
+
+    &--disabled {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    &--active {
+      font-weight: bold;
+    }
+
+    &--danger {
+      button {
+        color: var(--snft-wp-danger);
+      }
+    }
+  }
+
+  &__separator {
+    display: block;
+    width: 100%;
+    margin: $v-spacing 0;
+    border-bottom: 1px solid theme.$light-color-3;
+  }
+
+  &__static {
+    display: block;
+    text-align: left;
+    padding: ($v-spacing / 2) $h-spacing;
+  }
+
+  &__heading {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    text-align: left;
+    padding: 0 ($h-spacing / 2);
+    margin-bottom: ($v-spacing / 2);
+    user-select: none;
+  }
+}

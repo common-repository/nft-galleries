@@ -1,0 +1,199 @@
+.root {
+}
+
+/*---------------------------------------------------------
+  COLUMNS
+*/
+
+.name-col {
+  min-width: 120px;
+  width: 20%;
+}
+
+.sources-col {
+  min-width: 180px;
+  width: 20%;
+}
+
+.usages-col {
+}
+
+.actions-col {
+  width: 100px;
+}
+
+/*---------------------------------------------------------
+  CELLS
+*/
+
+.name-cell {
+}
+
+.sources-cell {
+}
+
+.usages-cell {
+}
+
+.actions-cell {
+  width: 100px;
+}
+
+/*---------------------------------------------------------
+  COMPONENTS
+*/
+
+.name {
+  composes: text-overflow-ellipsis from '../../../common/styles/layout.pcss';
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.meta-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2px;
+
+  & > *:not(:last-child) {
+    margin-right: 7px;
+  }
+}
+
+.meta-info {
+  color: var(--snft-grey);
+  text-transform: uppercase;
+
+  &:not(:last-child) {
+    padding-right: 7px;
+    border-right: 1px solid var(--snft-line-color);
+  }
+}
+
+.id {
+  composes: meta-info;
+}
+
+.layout {
+  composes: meta-info;
+}
+
+.sources-list {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.source {
+  composes: text-overflow-ellipsis from '../../../common/styles/layout.pcss';
+  white-space: nowrap;
+
+  font-size: 13px;
+  line-height: 20px;
+  display: inline-block;
+  padding: 3px 6px 3px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  border: 1px solid var(--snft-line-color);
+  border-radius: 99px;
+  background: #fff;
+  opacity: 0.8;
+
+  & > :last-of-type {
+    margin-right: 0;
+  }
+
+  & :global .dashicons {
+    font-size: 20px;
+    vertical-align: text-top;
+    margin-right: 5px !important;
+  }
+
+  & img {
+    margin-right: 5px;
+  }
+}
+
+.wallet-source {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+
+  &:focus {
+    box-shadow: 0 0 0 1px #5b9dd9, 0 0 2px 1px rgba(30, 140, 190, 0.8);
+    outline: 1px solid transparent;
+    border: 0;
+  }
+}
+
+.no-sources-msg {
+  color: #952020;
+}
+
+.usages-list {
+  composes: flex-column from '../../../common/styles/layout.pcss';
+}
+
+.usage {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  composes: text-overflow-ellipsis from '../../../common/styles/layout.pcss';
+  white-space: nowrap;
+}
+
+.usage-link {
+  composes: text-overflow-ellipsis from '../../../common/styles/layout.pcss';
+  white-space: nowrap;
+}
+
+.usage-type {
+  opacity: 0.75;
+  margin-left: 5px;
+}
+
+.actions-list {
+  display: flex;
+  flex-direction: row;
+
+  & > *:not(:last-child) {
+    margin-right: 7px;
+  }
+}
+
+.actions-btn {
+  & > svg {
+    fill: #444;
+    display: inline-block;
+    height: 20px;
+    vertical-align: text-bottom;
+  }
+}
+
+/*---------------------------------------------------------
+  RESPONSIVENESS
+*/
+
+@media screen and (max-width: 1080px) {
+  .meta-info.id {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .usages-col,
+  .usages-cell {
+    display: none;
+  }
+
+  .sources-col,
+  .sources-cell {
+    display: none;
+  }
+
+  .name-col {
+    width: auto;
+  }
+}

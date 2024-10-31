@@ -1,0 +1,38 @@
+.button {
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  box-shadow: 0 0 transparent;
+  border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+
+  &:active {
+    border: 0;
+    outline: 0;
+  }
+}
+
+.inactive {
+  composes: button;
+  color: #000;
+  background: transparent;
+
+  &:hover {
+    background: rgba(120, 120, 120, 0.1);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--snft-wp-blue);
+  }
+}
+
+.active {
+  composes: button;
+  color: #fff;
+  background: var(--snft-wp-blue);
+
+  &:focus {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--snft-wp-blue);
+  }
+}

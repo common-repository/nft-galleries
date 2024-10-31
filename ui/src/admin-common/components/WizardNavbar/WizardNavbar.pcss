@@ -1,0 +1,24 @@
+.arrow-link {
+  height: 20px;
+  line-height: 20px;
+
+  & :global .dashicons {
+    vertical-align: text-bottom;
+  }
+}
+
+.prev-link {
+  composes: arrow-link;
+
+  & :global .dashicons {
+    margin-right: 5px !important;
+  }
+}
+
+.next-link {
+  composes: arrow-link;
+
+  & :global .dashicons {
+    margin-left: 5px !important;
+  }
+}

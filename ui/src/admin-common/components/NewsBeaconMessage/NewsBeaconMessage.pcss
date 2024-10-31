@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 10px 5px;
+  margin: 0 10px;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--snft-line-color);
+  }
+}
+
+.text {
+  line-height: 1.5em;
+  white-space: pre-wrap;
+}
+
+.title {
+  composes: text;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.content {
+  composes: text;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+
+  & p {
+    margin: 0;
+  }
+}
+
+.date {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.7;
+}

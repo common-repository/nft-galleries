@@ -1,0 +1,33 @@
+.field-group {
+    /* Separator for filtering options */
+
+    & :global .feed-options__filtering-from-settings {
+        &:not(:last-of-type) {
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 -1px 0 var(--snft-line-color) inset;
+        }
+    }
+}
+
+.spoiler {
+    /* Remove spoilers' side borders */
+
+    & :global .spoiler__content,
+    & :global .spoiler__header {
+        border-left: 0;
+        border-right: 0;
+    }
+
+    /* Stretch spoiler content vertically */
+
+    & :global .spoiler__content {
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+}
+
+.pro-pill {
+    display: inline-block;
+    margin-right: 8px;
+}

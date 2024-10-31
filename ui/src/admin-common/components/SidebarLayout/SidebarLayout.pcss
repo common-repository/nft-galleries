@@ -1,0 +1,111 @@
+.layout {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  min-width: 400px;
+  z-index: 0;
+}
+
+.layout-primary-content {
+  composes: layout;
+}
+
+.layout-primary-sidebar {
+  composes: layout;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.content {
+  composes: container;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: var(--snft-wp-grey);
+}
+
+.sidebar {
+  composes: container;
+  position: relative;
+  flex: 0 0 400px;
+  justify-content: stretch;
+  background: var(--snft-wp-light-grey);
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.navigation {
+  flex: 0 0 50px;
+  display: none;
+  flex-direction: row;
+  padding: 0 var(--snft-sidebar-padding);
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid var(--snft-line-color);
+}
+
+.navigation-left {
+  composes: navigation;
+  justify-content: flex-start;
+}
+
+.navigation-right {
+  composes: navigation;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  cursor: pointer;
+  line-height: 20px;
+
+  & :global .dashicons {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (width < 968px) {
+  .navigation {
+    display: flex;
+  }
+
+  .layout-primary-content {
+    & .sidebar {
+      flex: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    & .content {
+      flex: 1;
+      z-index: 0;
+    }
+  }
+
+  .layout-primary-sidebar {
+    & .content {
+      flex: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    & .sidebar {
+      flex: 1;
+      z-index: 0;
+    }
+  }
+}

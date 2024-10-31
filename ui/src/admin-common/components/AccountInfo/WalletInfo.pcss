@@ -1,0 +1,174 @@
+.root {
+  display: flex;
+  flex-direction: column;
+
+  & p {
+    margin: 0 0 7px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & hr {
+    width: 100%;
+    margin: 15px 0;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.info-column {
+  composes: column;
+  flex: 1;
+  align-items: stretch;
+  margin-right: 15px;
+}
+
+.pic-column {
+  composes: column;
+  flex: 100px 0;
+  align-items: stretch;
+  padding-left: 15px;
+  border-left: 1px solid var(--snft-line-color);
+
+  & > div {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.center-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.id {
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
+.name {
+  font-weight: normal;
+  text-decoration: none;
+  font-size: 22px;
+  line-height: 32px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 7px;
+}
+
+.row {
+  margin-bottom: 10px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.pre {
+  display: block;
+  padding: 7px 10px;
+  margin: 5px 0;
+  border-radius: 2px;
+  background: var(--snft-wp-grey);
+
+  white-space: pre-wrap;
+  word-wrap: anywhere;
+}
+
+.bio {
+  composes: pre;
+}
+
+.link-button {
+  cursor: pointer;
+
+}
+
+.edit-bio-link {
+  composes: link-button;
+  margin-left: 5px;
+}
+
+.bio-editor {
+  display: block;
+  width: 100%;
+}
+
+.bio-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.bio-editing-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  & > *:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+
+.access-token {
+  composes: pre;
+  user-select: all;
+}
+
+.set-custom-pic {
+  margin-top: 7px;
+  cursor: pointer;
+}
+
+.reset-custom-pic {
+  composes: link-button;
+  margin-top: 10px;
+
+  &, &:visited {
+    color: var(--snft-rouge);
+  }
+
+  &:hover, &:focus, &:active {
+    color: var(--snft-rouge);
+    filter: brightness(110%);
+    text-decoration: underline;
+  }
+}
+
+.subtext {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.personal-info-message {
+  margin-bottom: 10px;
+}

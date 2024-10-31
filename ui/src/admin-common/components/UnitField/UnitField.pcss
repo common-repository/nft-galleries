@@ -1,0 +1,120 @@
+:root {
+  --snft-unit-field-width: 50px;
+}
+
+.root {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  justify-content: flex-start;
+  align-items: stretch;
+  border: 1px solid var(--snft-line-color);
+  border-radius: 2px;
+  box-sizing: border-box;
+  width: 100%;
+
+  &:focus-within {
+    box-shadow: 0 0 0 2px var(--snft-focus-color);
+  }
+}
+
+.input {
+  flex: 2;
+  min-width: var(--snft-unit-field-width) !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+
+  &, &:focus {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: 0 0 0 transparent !important;
+  }
+}
+
+.unit-container {
+  composes: flex-column from '../../../common/styles/layout.pcss';
+  flex: 0 1;
+  justify-content: stretch;
+  align-items: stretch;
+
+  & :global .menu__ref {
+    height: 100%;
+  }
+}
+
+.unit-bubble {
+  padding: 3px 7px;
+  user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.unit-static {
+  composes: unit-bubble;
+  composes: flex-column from '../../../common/styles/layout.pcss';
+  justify-content: center;
+}
+
+.unit-selector {
+  composes: unit-bubble;
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  cursor: pointer;
+  line-height: 20px;
+
+  &:focus {
+    outline: 1px dotted black;
+  }
+}
+
+.current-unit {
+  flex: 1;
+  margin-left: 2px;
+}
+
+.menu-chevron {
+  flex: 0;
+  font-size: 18px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 3px 0 0 5px;
+  color: var(--snft-grey);
+}
+
+.menu-chevron-open {
+  composes: menu-chevron;
+  color: var(--snft-dark);
+}
+
+.unit-list {
+  composes: flex-column z-highest from '../../../common/styles/layout.pcss';
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  border: 1px solid var(--snft-line-color);
+  border-radius: 2px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.unit-option {
+  color: inherit;
+  background: transparent;
+  padding: 7px 13px;
+
+  &:hover {
+    background: var(--snft-wp-grey);
+  }
+}
+
+.unit-selected {
+  composes: unit-option;
+  color: #fff;
+
+  &, &:hover {
+    background: var(--wp-admin-theme-color);
+  }
+}

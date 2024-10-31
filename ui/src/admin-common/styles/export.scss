@@ -1,0 +1,12 @@
+@import "theme";
+
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  tertiaryColor: $tertiary-color;
+  lightColor: $light-color;
+  lightColor2: $light-color-2;
+  lightColor3: $light-color-3;
+  shadowColor: $shadow-color;
+  washedColor: $washed-color;
+}

@@ -1,0 +1,115 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  & > div {
+    flex: 1;
+  }
+}
+
+.content-arrows-outside {
+  composes: content;
+}
+
+/* Nav button containers from AliceCarousel */
+.content {
+  & :global .alice-carousel__prev-btn,
+  & :global .alice-carousel__next-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  & :global .alice-carousel__prev-btn {
+    left: 0;
+  }
+
+  & :global .alice-carousel__next-btn {
+    right: 0;
+  }
+}
+
+.content-arrows-outside {
+  & :global .alice-carousel__prev-btn {
+    left: -40px;
+  }
+
+  & :global .alice-carousel__next-btn {
+    right: -40px;
+  }
+}
+
+.nav-btn {
+  position: relative;
+  border-radius: 100%;
+  box-sizing: content-box;
+  pointer-events: all;
+  cursor: pointer;
+
+  &:focus {
+    outline: 1px dotted black;
+  }
+}
+
+.left-nav-btn {
+  composes: nav-btn;
+  padding: 5px;
+
+  & svg {
+      position: relative;
+      left: -1px;
+  }
+}
+
+.right-nav-btn {
+  composes: nav-btn;
+  padding: 5px 4px 5px 6px;
+
+    & svg {
+        position: relative;
+        left: 1px;
+    }
+}
+
+.item-square {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.item-sizer {
+  position: absolute;
+  composes: fill-parent flex-column from "../../common/styles/layout.pcss";
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+/* Style fix for carousel <ul> and <li> */
+:global .alice-carousel__stage, :global .alice-carousel__stage-item {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Force carousel items to be be full height */
+:global .alice-carousel__stage-item {
+}

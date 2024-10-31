@@ -1,0 +1,59 @@
+.embed-sidebar {
+    & p {
+        margin-top: 0;
+    }
+
+    & ol {
+        margin-top: 10px;
+    }
+}
+
+.save-message {
+    margin: 15px 10px;
+}
+
+.shortcode {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    & code {
+        flex: 1;
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.5em;
+        padding: 8px 10px;
+        background: #fff;
+        box-shadow: 0 0 0 1px #ccc inset;
+        border-radius: 3px;
+        margin-right: 10px;
+    }
+}
+
+.instances {
+    & p {
+        margin: 0 0 8px !important;
+    }
+
+    & ul {
+        margin: 0;
+        list-style: disc inside !important;
+    }
+
+    & li span {
+        margin-left: 5px;
+        font-weight: bold;
+        opacity: 0.8;
+    }
+}
+
+.pro {
+    & :global .spoiler__content {
+        pointer-events: none;
+        user-select: none;
+        opacity: 0.5;
+    }
+}

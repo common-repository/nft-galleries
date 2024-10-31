@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.trait {
+  composes: root;
+  border: 1px solid var(--snft-line-color);
+}
+
+.skeleton {
+  composes: root;
+  composes: skeleton from "../../common/styles/colors.pcss";
+}
+
+.row {
+  font-weight: bold;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.type {
+  composes: row;
+  color: #838383;
+  font-size: 10px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.value {
+  composes: row;
+  color: #444;
+  font-size: 15px;
+  line-height: 26px;
+  text-transform: capitalize;
+}

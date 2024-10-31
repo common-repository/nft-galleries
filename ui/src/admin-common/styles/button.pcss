@@ -1,0 +1,36 @@
+.panel-button {
+  composes: panel from "theme.pcss";
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background: var(--snft-wp-light-grey);
+  }
+
+  &:active {
+    background: #fff;
+  }
+
+  &:focus {
+    border-color: var(--wp-admin-theme-color);
+    box-shadow: 0 0 0 1px var(--wp-admin-theme-color);
+  }
+}
+
+.toggle-button {
+  composes: panel-button;
+}
+
+.toggle-button-on {
+  composes: toggle-button;
+
+  &, &:hover, &:active, &:focus {
+    color: #fff;
+    background: var(--wp-admin-theme-color);
+    border-color: var(--wp-admin-theme-color);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--wp-admin-theme-color);
+  }
+}

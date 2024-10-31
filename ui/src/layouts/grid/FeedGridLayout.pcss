@@ -1,0 +1,28 @@
+.root {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  align-items: stretch;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: dense;
+}
+
+.cell {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.cell-caption {
+  text-align: center;
+  padding: 5px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-list {
+  composes: flex-column from "../../common/styles/layout.pcss";
+  align-items: center;
+}

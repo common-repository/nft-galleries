@@ -1,0 +1,57 @@
+$rss: #ee5900;
+$indigo: #564dd8;
+$green: #3d8e34;
+$cyan: #1898b2;
+$teal: #429b93;
+$pink: #d04186;
+$blue: #0f69cb;
+$yellow: #ffcb00;
+$gold: #ffbf00;
+$orange: #ff9300;
+$rouge: #d82442;
+$grey: #999;
+$dark: #292d33;
+$wp-blue: #007cba;
+$snft-yellow: #ffb83b;
+
+// Theme colors
+$primary-color: $wp-blue;
+$secondary-color: $pink;
+$tertiary-color: $rouge;
+$complimentary-color: $orange;
+$pro-color: $snft-yellow;
+$dark-color: rgb(35, 45, 78);
+
+$focus-color: $wp-blue;
+$tooltip-color: #191e23;
+
+$insta-purple: #595fcd;
+$insta-pink: #d1006a;
+$insta-red: #e70027;
+$insta-orange: #f56c34;
+$insta-yellow: #feda7c;
+
+$wp-color: #f1f1f1;
+$wp-light-grey: #f9f9f9;
+$light-color: #f5f5f5;
+$light-color-2: #e6e7e8;
+$light-color-3: #e1e2e3;
+
+$rainbow-color: linear-gradient(90deg, rgba(0, 43, 222, 1) 0%, rgba(62, 9, 121, 1) 25%, rgba(230, 17, 148, 1) 50%, rgba(215, 28, 58, 1) 75%, rgba(230, 189, 14, 1) 100%);
+
+$faded-color: mix($primary-color, #fff, 15%);
+$washed-color: mix(desaturate($primary-color, 50%), #fff, 10%);
+$line-color: mix($washed-color, #000, 90%);
+$light-line-color: mix($line-color, white, 20%);
+$dark-line-color: mix($line-color, black, 20%);
+
+//$shade-color: adjust_color($primary-color, $lightness: -50%, $alpha: -0.5);
+$shade-color: adjust_color(#000, $alpha: -0.7);
+
+$shadow-color: rgba(20, 25, 60, 0.32);
+
+$btn-color: mix($dark-color, #fff, 10%);
+$btn-hover-color: mix($dark-color, #fff, 8%);
+$btn-active-color: fade_out($dark-color, 0.85);
+$btn-border-color: rgba(0, 0, 0, 0.1);
+$btn-focus-outline-color: rgba(0, 0, 0, 0.7);

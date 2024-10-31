@@ -1,0 +1,78 @@
+@import '../../../common/styles/colors.pcss';
+
+.root {
+    position: relative;
+    padding: 20px 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--snft-line-color);
+}
+
+.loading {
+    padding: 30px;
+    color: #333;
+    background: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+img.logo {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 26px !important;
+}
+
+.label {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.missing-feed-msg {
+  composes: label;
+  color: var(--snft-rouge);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--snft-line-color);
+}
+
+.no-sources-msg {
+    color: var(--snft-rouge);
+    font-size: 14px;
+    line-height: 2em;
+}
+
+.selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 10px;
+  padding: 0 15px;
+}
+
+.selector-label {
+  margin-right: 8px;
+
+  & span {
+    font-weight: normal;
+  }
+}
+
+.selector-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & :global .components-base-control__field {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.feed-container {
+  cursor: default;
+
+  & > div {
+    pointer-events: none;
+  }
+}

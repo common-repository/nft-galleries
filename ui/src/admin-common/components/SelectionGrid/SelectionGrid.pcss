@@ -1,0 +1,37 @@
+.root {
+    position: relative;
+    display: block;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.15fr));
+    grid-auto-rows: minmax(200px, auto);
+    justify-content: flex-start;
+}
+
+.grid-disabled {
+    composes: grid;
+
+    & > .item {
+        opacity: 0.7;
+        filter: contrast(90%) grayscale(80%);
+        pointer-events: none;
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+
+    &:focus {
+        outline: 0;
+        border: 0;
+        box-shadow: 0 0 0;
+    }
+}

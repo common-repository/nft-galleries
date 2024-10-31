@@ -1,0 +1,53 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+
+    animation: 1.5s linear infinite;
+    animation-name: admin-loading-blink;
+}
+
+.sizer {
+    position: relative;
+    top: -20%;
+    max-width: 300px;
+    border-radius: 50%;
+}
+
+@keyframes admin-loading-blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes admin-loading-spinner {
+    0% {
+        transform: rotate(0deg);
+        border-top-color: var(--snft-line-color);
+    }
+    20% {
+        border-top-color: var(--snft-rouge);
+    }
+    40% {
+        border-top-color: var(--snft-pink);
+    }
+    60% {
+        border-top-color: var(--snft-insta-purple);
+    }
+    80% {
+        border-top-color: var(--snft-wp-blue);
+    }
+    100% {
+        transform: rotate(360deg);
+        border-top-color: var(--snft-line-color);
+    }
+}

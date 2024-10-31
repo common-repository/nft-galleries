@@ -1,0 +1,103 @@
+.root {
+}
+
+/*---------------------------------------------------------
+  COLUMNS
+*/
+
+.name-col {
+  width: 15%;
+}
+
+.address-col {
+}
+
+.usages-col {
+  width: 30%;
+}
+
+.actions-col {
+  width: 100px;
+}
+
+/*---------------------------------------------------------
+  CELLS
+*/
+
+.name-cell > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.address-cell {
+}
+
+.usages-cell {
+}
+
+.actions-cell {
+}
+
+/*---------------------------------------------------------
+  MISC
+*/
+
+.name {
+  font-weight: bold;
+}
+
+.address {
+  text-transform: lowercase;
+  font-family: monospace;
+}
+
+.usages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  & > a {
+    margin-bottom: 5px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.actions-btn {
+  & > svg {
+    fill: #444;
+    display: inline-block;
+    height: 20px;
+    vertical-align: text-bottom;
+  }
+}
+
+/*---------------------------------------------------------
+  RESPONSIVENESS
+*/
+
+@media screen and (max-width: 768px) {
+  .name-col {
+    width: 50%;
+  }
+
+  .usages-col,
+  .usages-cell {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .name-col {
+    width: 90%;
+  }
+
+  .address-col,
+  .address-cell {
+    display: none;
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../../common/styles/colors.pcss";
+
+.table {
+    composes: subtle-drop-shadow slightly-rounded from '../../styles/theme.pcss';
+    width: 100%;
+    margin-bottom: 20px;
+    background: #fff;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.header {
+    border-bottom: 1px solid var(--snft-line-color);
+}
+
+.footer {
+    border-top: 1px solid var(--snft-line-color);
+}
+
+.cell {
+    padding: 10px 14px;
+    box-sizing: border-box;
+}
+
+.col-heading {
+    composes: cell;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.row {
+    background: #fff;
+}
+
+.row:nth-child(odd) {
+    background: var(--snft-wp-light-grey);
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-center {
+    text-align: center;
+}

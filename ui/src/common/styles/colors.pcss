@@ -1,0 +1,55 @@
+:root {
+  /* Generic colors */
+  --snft-yellow: #ffb83b;
+  --snft-indigo: #564dd8;
+  --snft-green: #3d8e34;
+  --snft-cyan: #1898b2;
+  --snft-teal: #429b93;
+  --snft-pink: #d04186;
+  --snft-blue: #0f69cb;
+  --snft-gold: #ffbf00;
+  --snft-orange: #ff9300;
+  --snft-rouge: #d82442;
+  --snft-grey: #999;
+  --snft-dark: #191e23;
+  --snft-black: #202225;
+  --snft-wp-blue: #007cba;
+  --snft-insta-purple: #595fcd;
+  --snft-wp-grey: #f1f1f1;
+  --snft-wp-light-grey: #f9f9f9;
+  --snft-wp-danger: #b32d2e;
+
+  /* Theme colors */
+  --snft-primary-color: var(--wp-admin-theme-color);
+  --snft-secondary-color: var(--snft-yellow);
+  --snft-tertiary-color: var(--snft-pink);
+  --snft-pro-bg-color: #dd234b;
+  --snft-pro-fg-color: #fff;
+  --snft-focus-color: var(--snft-wp-blue);
+  --snft-tooltip-color: var(--snft-dark);
+  --snft-line-color: #d3d8dc;
+  --snft-line-color-2: #e6e7e8;
+  --snft-shade-color: rgba(0, 0, 0, 0.3)
+}
+
+.skeleton {
+  animation-name: skeleton;
+  animation-duration: 450ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.skeleton-text {
+  composes: skeleton;
+  border-radius: 3px;
+}
+
+@keyframes skeleton {
+  from {
+    background: #ddd;
+  }
+  to {
+    background: #f1f1f1;
+  }
+}

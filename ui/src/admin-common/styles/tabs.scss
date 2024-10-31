@@ -1,0 +1,69 @@
+@use "theme";
+
+.tab-view {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-height: 100%;
+  max-width: 100%;
+
+  &__tab-list {
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    background: theme.$light-color;
+    box-shadow: 0 -1px 0 theme.$line-color inset;
+    padding-right: 60px;
+  }
+
+  &__tab {
+    padding: 15px 25px;
+    border: 0;
+    border-radius: 0;
+    color: inherit;
+    background: transparent;
+
+    &, &:focus, &:active {
+      box-shadow: 0 0 0 transparent;
+      outline: 0;
+    }
+
+    &:hover {
+      background: theme.$light-color-2;
+    }
+
+    &:focus {
+      text-decoration: underline;
+      box-shadow: 0 -3px 0 mix(theme.$primary-color, theme.$line-color, 10%) inset;
+    }
+
+    &--open {
+      font-weight: bold;
+
+      &, &:focus, &:active {
+        box-shadow: 0 -3px 0 theme.$primary-color inset;
+      }
+    }
+
+    &--disabled {
+      @include theme.disabled-style;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  @include theme.responsive(theme.$screen-tiny) {
+    &__tab {
+      padding: 20px 15px;
+      font-size: 14px;
+    }
+  }
+}

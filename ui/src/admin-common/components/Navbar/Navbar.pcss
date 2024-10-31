@@ -1,0 +1,191 @@
+/*---------------------------------------------------------
+    CONTAINERS
+*/
+
+:root {
+  --snft-navbar-font-size: 14px;
+  --snft-navbar-spacing: 16px;
+  --snft-navbar-logo-size: 100px;
+  --snft-navbar-height: 52px;
+}
+
+.root {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  justify-content: space-between;
+  align-items: stretch;
+
+  position: relative;
+  width: 100%;
+  font-size: var(--snft-navbar-font-size);
+  padding: 0 var(--snft-navbar-spacing);
+
+  background: #fff;
+  box-shadow: 0 1px 1px var(--snft-line-color);
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.container {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  flex: 1;
+  align-items: stretch;
+}
+
+.left-container {
+  composes: container;
+  justify-content: flex-start;
+}
+
+.right-container {
+  composes: container;
+  justify-content: flex-end;
+
+  &:not(:empty) {
+    margin-left: var(--snft-navbar-spacing);
+  }
+}
+
+/*---------------------------------------------------------
+  ITEM COMPONENTS
+*/
+
+.child {
+  margin-right: var(--snft-navbar-spacing);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.section {
+  composes: child;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.item {
+  composes: child;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: inherit;
+  white-space: nowrap;
+
+  & > * {
+    flex: 1;
+
+    &:not(.disabled):focus {
+      outline: 1px dotted black;
+      box-shadow: 0 0 transparent;
+    }
+  }
+}
+
+.chevron {
+  composes: child;
+
+  flex-shrink: 0;
+  width: 10px;
+  height: 40%;
+  align-self: center;
+  color: var(--snft-line-color);
+
+  & svg {
+    stroke-width: 8;
+  }
+}
+
+.link {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 5px;
+
+  &, &:hover, &:active, &:focus {
+    color: #000 !important;
+    text-decoration: none;
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+
+  &.disabled {
+    & > * {
+      opacity: 0.5;
+    }
+
+    & > .pro-pill {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: var(--wp-admin-theme-color);
+    transition: 0.05s height;
+  }
+
+  &.current {
+    font-weight: bold;
+
+    &::after {
+      height: 2px;
+    }
+  }
+}
+
+.pro-pill {
+  position: relative;
+  top: -10px;
+  left: 1px;
+  margin-right: -4px;
+}
+
+/*---------------------------------------------------------
+  USEFUL STYLES
+*/
+
+.button-container {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  padding: 7px 0;
+}
+
+/*---------------------------------------------------------
+  RESPONSIVENESS
+*/
+
+@media (--medium-screen) {
+  :root {
+    --snft-navbar-spacing: 20px;
+    --snft-navbar-font-size: 14px;
+    --snft-navbar-logo-size: 90px;
+  }
+}
+
+@media (--small-screen) {
+  :root {
+    --snft-navbar-spacing: 16px;
+    --snft-navbar-font-size: 13px;
+    --snft-navbar-logo-size: 80px;
+  }
+}
+
+@media (--tiny-screen) {
+  :root {
+    --snft-navbar-spacing: 13px;
+    --snft-navbar-font-size: 12px;
+    --snft-navbar-logo-size: 60px;
+  }
+}

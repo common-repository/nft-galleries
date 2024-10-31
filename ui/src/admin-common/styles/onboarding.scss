@@ -1,0 +1,158 @@
+@use "theme";
+
+.onboarding {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  padding: 50px 0;
+  font-size: 14px;
+  margin: 0 auto;
+
+  animation: 0.2s onboarding-entrance ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &:not(&--full-width) {
+    width: 75%;
+  }
+
+  &--transitioning {
+    animation: 0.2s onboarding-transition ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    &:first-child {
+      flex: 5 1;
+      justify-content: flex-start;
+    }
+
+    &:not(:first-child) {
+      flex: 3;
+    }
+
+    &:not(:last-child) {
+      margin-right: 5%;
+    }
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 20px;
+  }
+
+  p, &__steps {
+    font-size: inherit;
+    margin: 0 0 30px;
+  }
+
+  &__thin {
+    max-width: 300px;
+  }
+
+  &__steps {
+    list-style: none;
+
+    li {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__done {
+    text-decoration: line-through;
+    opacity: 0.8;
+  }
+
+  &__help-msg {
+    opacity: 0.6;
+    filter: grayscale(1);
+  }
+
+  &__pro-tip {
+    > span:first-child {
+      margin-right: 5px;
+
+      > .dashicons, {
+        margin-right: 3px;
+        margin-left: -5px;
+      }
+    }
+  }
+
+  &__hero-button {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px !important;
+  }
+
+  @include theme.responsive(theme.$screen-medium) {
+    &:not(&--full-width) {
+      width: 85%;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  @include theme.responsive(theme.$screen-small) {
+    &:not(&--full-width) {
+      width: 95%;
+    }
+
+    &__thin {
+      max-width: unset;
+    }
+  }
+
+  @include theme.responsive(theme.$screen-tiny) {
+    & {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      width: 100%;
+      padding-top: 10px;
+
+      > div:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__call-to-action {
+      max-width: unset;
+    }
+  }
+}
+
+@keyframes onboarding-entrance {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes onboarding-transition {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}

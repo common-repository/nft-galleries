@@ -1,0 +1,52 @@
+.root {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+  position: relative;
+}
+
+.container {
+  composes: flex-row from '../../../common/styles/layout.pcss';
+}
+
+.edit-container {
+  composes: container;
+}
+
+.static-container {
+  composes: container;
+  align-items: center;
+  cursor: pointer;
+
+  &:focus {
+    outline: 1px dotted black;
+  }
+
+  &:hover .edit-icon {
+    opacity: 1;
+  }
+}
+
+.edit-icon {
+  composes: dashicon-normal from '../../styles/dashicons.pcss';
+  margin-left: 8px;
+  color: var(--snft-grey);
+  opacity: 0.8;
+}
+
+.label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 150px;
+}
+
+.edit-container {
+  align-items: stretch;
+}
+
+.done-btn {
+  margin-left: 8px !important;
+
+  & :global .dashicons {
+    margin-right: 0 !important;
+  }
+}

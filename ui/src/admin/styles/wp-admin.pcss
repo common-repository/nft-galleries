@@ -1,0 +1,44 @@
+:global #wpcontent {
+    padding-left: 0;
+}
+
+:global #wpbody-content {
+    float: unset;
+    padding-bottom: 0;
+}
+
+:global #wpfooter {
+    display: none;
+}
+
+:global .wrap {
+    margin: 0;
+}
+
+:global #wpcontent,
+:global #wpbody,
+:global .wrap {
+    position: absolute !important;
+    inset: 0;
+}
+
+#adminmenu :global li.wp-has-current-submenu :global ul.wp-submenu {
+    cursor: auto;
+
+    :global .snft-onboarding {
+        display: none;
+    }
+
+    & li, & a {
+        cursor: pointer;
+    }
+
+    & :global li.disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+
+        a {
+            pointer-events: none;
+        }
+    }
+}

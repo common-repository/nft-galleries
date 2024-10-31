@@ -1,0 +1,14 @@
+.modal-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: visible;
+  background: transparent;
+  pointer-events: none;
+
+  & > * {
+    pointer-events: all;
+  }
+}

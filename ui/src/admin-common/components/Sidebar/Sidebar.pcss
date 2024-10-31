@@ -1,0 +1,37 @@
+:root {
+  --snft-sidebar-padding: 15px;
+}
+
+.sidebar {
+  box-sizing: border-box;
+}
+
+.content {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  background: var(--snft-wp-light-grey);
+  border-left: 1px solid var(--snft-line-color);
+  box-sizing: border-box;
+  transition: transform 0.1s ease-out;
+  z-index: 1;
+}
+
+.padded {
+  padding: var(--snft-sidebar-padding);
+}
+
+.padded-content {
+  composes: content;
+  composes: padded;
+}
+
+.disabled {
+  composes: sidebar;
+  pointer-events: none;
+  opacity: 0.7;
+  filter: contrast(90%) grayscale(80%);
+}

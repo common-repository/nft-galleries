@@ -1,0 +1,77 @@
+.root {
+  position: relative;
+  flex: 0 0 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap-reverse;
+  padding: 10px 20px;
+  margin-top: 1px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.root, .segment {
+  background: var(--snft-wp-grey);
+}
+
+.segment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.side {
+  composes: segment;
+  position: absolute;
+  inset: 0 unset;
+}
+
+.left {
+  composes: side;
+  left: 20px;
+}
+
+.right {
+  composes: side;
+  right: 20px;
+
+  & > *:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+
+.center {
+  composes: segment;
+}
+
+.post-counter {
+  margin-left: 5px;
+  line-height: 30px;
+}
+
+.reset {
+  opacity: 1;
+  margin-left: 5px;
+
+  & a {
+    cursor: pointer;
+  }
+}
+
+.spinner {
+  margin-left: 5px;
+  vertical-align: text-top;
+}
+
+@media screen and (max-width: 960px) {
+  .root {
+    justify-content: flex-start;
+  }
+
+  .left {
+    display: none;
+  }
+}

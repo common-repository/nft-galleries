@@ -1,0 +1,52 @@
+:root {
+  --card-image-size: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  background: transparent;
+}
+
+.side {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  border-radius: var(--card-image-size);
+  width: var(--card-image-size);
+  height: var(--card-image-size);
+  margin-right: 15px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #ccc;
+  background-image: linear-gradient(40deg, var(--snft-yellow) 10%, var(--snft-rouge) 50%, var(--snft-insta-purple) 90%);
+  overflow: hidden;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

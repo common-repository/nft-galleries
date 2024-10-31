@@ -1,0 +1,42 @@
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: -12px;
+    padding: 10px 0;
+
+    & > input {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    & > span {
+        flex-grow: 1;
+    }
+}
+
+.disabled-option {
+    composes: option;
+    composes: disabled from '../../../styles/theme.pcss';
+
+    > span {
+        @include theme.disabled-style;
+    }
+}
+
+.pro-pill {
+    position: relative;
+    left: 10px;
+}
+
+@media (--tiny-screen) {
+    .option {
+        margin-bottom: 0;
+    }
+}

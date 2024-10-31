@@ -1,0 +1,107 @@
+@value flex-box from '../../common/styles/layout.pcss';
+
+.container {
+  composes: flex-box;
+  position: relative;
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+
+  & * {
+    font-size: inherit;
+  }
+}
+
+.horizontal, .vertical {
+  composes: container;
+}
+
+.wrapper {
+  composes: flex-box;
+  position: relative;
+  justify-content: center;
+  min-height: 450px;
+}
+
+.wrapper-sidebar {
+  composes: wrapper;
+  margin-right: 335px;
+  background: #000;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 335px;
+  background: #fff;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.token-container {
+  display: block;
+  width: 100%;
+}
+
+.token-sizer {
+  composes: flex-box;
+  display: block;
+  top: 0;
+  left: 0;
+  padding-bottom: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.token {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- VERTICAL MODE --- */
+
+.vertical {
+  flex-direction: column;
+
+  & .wrapper {
+    left: 0;
+    bottom: unset;
+    min-height: unset;
+  }
+
+  & .wrapper-sidebar {
+    margin-right: 0;
+  }
+
+  & .token-sizer {
+    position: relative;
+    max-width: 450px;
+    height: auto;
+    margin: auto;
+    padding-bottom: 0;
+  }
+
+  & .token {
+    position: relative;
+    width: 100%;
+    height: unset;
+  }
+
+  & .sidebar {
+    position: relative;
+    width: 100%;
+  }
+}
